@@ -4,6 +4,7 @@ const xml2js = require('xml2js');
 
 const fileName = 'data.xml';
 const dirName = __dirname + '\\..\\';
+let data;
 
 async function downloadXML() {
     const fileURL = 'https://dev.tedooo.com/feed.xml';
@@ -12,15 +13,19 @@ async function downloadXML() {
         {'flags': 'w'}
     );
 
-    const request = https.get(fileURL, (res) => {
+    const request =  https.get(fileURL, (res) => {
+        console.log(res)
         res.pipe(file);
+        console.log(file)
+        file.on('finish', () => {
+            file.close();
+            console.log('bla');
+        })
     });
 }
 
 async function read(){
     const fileData = fs.readFileSync(dirName + fileName, 'utf8', 'r');
-    // const bla = fs.readFile(dirName + fileName, 'ascii', 'r')
-    console.log(fileData)
     const parser = new xml2js.Parser();
 
     let json;
@@ -33,10 +38,13 @@ async function read(){
     return json;
 }
 
-const bla = async () => {
-    //await downloadXML();
+async function getXMLData() {
+    // await downloadXML();
     const res = await read();
-    console.log(res);
+    console.log(res.result['Data']);
+    return res.result['Data'];
 }
 
-bla();
+module.exports = {
+    getXMLData,
+}
