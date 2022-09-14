@@ -16,7 +16,6 @@ async function downloadXML() {
     const request =  https.get(fileURL, (res) => {
         console.log(res)
         res.pipe(file);
-        console.log(file)
         file.on('finish', () => {
             file.close();
             console.log('bla');
@@ -41,7 +40,6 @@ async function read(){
 async function getXMLData() {
     // await downloadXML();
     const res = await read();
-    console.log(res.result['Data']);
     return res.result['Data'];
 }
 
