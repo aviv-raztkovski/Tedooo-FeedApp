@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(routes);
 app.use(cors());
 
-const port = process.env.SERVER_PORT || 3000;
+const port = process.env.SERVER_PORT || 5000;
 
 app.listen(port, async () => {
     console.log(`server open at http://localhost:${port}`);
