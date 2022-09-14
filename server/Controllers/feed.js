@@ -1,7 +1,7 @@
-const {getXMLData, read} = require('../util/getXMLData');
+const {readXMLData} = require('../util/getXMLData');
 
 async function feed(req, res) {
-    const feedData = await read();
+    const feedData = await readXMLData();
     const page = parseInt(req.query.page);
     const limit = parseInt(req.query.limit);
 

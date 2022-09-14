@@ -6,7 +6,7 @@ const fileName = 'data.xml';
 const dirName = __dirname + '\\..\\';
 let data;
 
-async function read(){
+async function readXMLData(){
     const fileData = fs.readFileSync(dirName + fileName, 'utf8', 'r');
     const parser = new xml2js.Parser();
 
@@ -20,12 +20,6 @@ async function read(){
     return json.result['Data'];
 }
 
-async function getXMLData() {
-    const res = await read();
-    return res.result['Data'];
-}
-
 module.exports = {
-    getXMLData,
-    read
+    readXMLData
 }
