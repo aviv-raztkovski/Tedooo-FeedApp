@@ -1,6 +1,8 @@
 const {readXMLData} = require('../util/getXMLData');
 
 async function feed(req, res) {
+    res.header('Access-Control-Allow-Origin', '*')
+
     const feedData = await readXMLData();
     const page = parseInt(req.query.page);
     const limit = parseInt(req.query.limit);
@@ -9,6 +11,8 @@ async function feed(req, res) {
     const endIndex = page * limit;
 
     const results = {};
+
+    results.postsLength = feedData.length;
 
     if (endIndex < await feedData.length) {
         results.next = {
