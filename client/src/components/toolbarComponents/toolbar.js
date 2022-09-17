@@ -1,11 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import Navlink from "./navlink";
 import ProfileImg from "../ProfileImg"
 import logo from '../../img/tedoooLogo.png'
 
 export default function Toolbar() {
-    // const logo = "../../img/tedoooLogo.png"
-
     const toolbarLinks = {
         home: "Home",
         messaging: "Messaging",
@@ -41,7 +39,7 @@ export default function Toolbar() {
             </div>
             <div className="leftSide">
 
-                <Navlink text={toolbarLinks.home} svg={toolbarSVG.home}/>
+                <Navlink selected={true} text={toolbarLinks.home} svg={toolbarSVG.home}/>
                 <Navlink text={toolbarLinks.messaging} svg={toolbarSVG.messaging}/>
                 <Navlink text={toolbarLinks.notifications} svg={toolbarSVG.notifications}/>
 

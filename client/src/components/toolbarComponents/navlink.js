@@ -1,6 +1,6 @@
-export default function Navlink({ text, svg }) {
+export default function Navlink({ text, svg, selected }) {
     return (
-        <button className="nav-link">
+        <button className={`nav-link ${selected ? 'nav-link-selected' : ''}`}>
             <h2 className="navlink-text"><span>{svg}</span> {text}</h2>
         </button>
         // <>
