@@ -8,7 +8,14 @@ const routes = require('./routes');
 const app = express();
 app.use(express.json());
 app.use(routes);
-app.use(cors());
+
+const corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200,
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}
+
+app.use(cors(corsOptions));
 
 const port = process.env.SERVER_PORT || 5000;
 
