@@ -33,7 +33,7 @@ export default function App() {
       {posts.map((post, index) => {
         if(postsID.includes(post.id[0])) return <></>;
         postsID.push(post.id[0]);
-        console.log(post.id[0])
+        console.log(post.didLike[0])
         console.log(index)
         if (posts.length === index + 1) {
           return (<Post 
