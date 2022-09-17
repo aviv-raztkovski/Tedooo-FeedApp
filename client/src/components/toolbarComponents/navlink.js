@@ -1,15 +1,11 @@
-import { Link } from "react-router-dom"; // eslint-disable-line
-
-export default function Navlink({ text }) {
+export default function Navlink({ text, svg }) {
     return (
-        // <Link to={"#"} className="navlink">
-        //     {/* <svg className="search-icon">
-        //             <use xlink:href="../img/svg/sprites.svg#icon-search"></use>
-        //         </svg> */}
-        //     <h2 className="navlink-text">{text}</h2>
-        // </Link>
-        <button className="navlink">
-            <h2 className="navlink-text">{text}</h2>
+        <button className="nav-link">
+            <h2 className="navlink-text"><span>{svg}</span> {text}</h2>
         </button>
+        // <>
+        //     <input type="radio" className="nav-link" id={`radio-${text}`} value={text} name="navlinks"/>
+        //     <label className="navlink-text" for={`radio-${text}`}><span>{svg}</span> {text}</label>
+        // </>
     )
 }

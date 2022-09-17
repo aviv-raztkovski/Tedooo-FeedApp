@@ -1,3 +1,13 @@
+:root {
+    --color-background-grey-light: #F6F7F7;
+    --color-button-selected-text-green: #2DB8A1;
+    --color-searchbox-background: #F4F5F5;
+    --color-comapny-name-blue: #2678C9;
+    --color-imgs-background: #B8C248;
+    --color-button-like: #2C85CE;
+    --color-button-text-grey: #949796;
+}
+
 *, 
 *::after, 
 *::before
@@ -7,13 +17,96 @@
     box-sizing: inherit;
 }
 
+
 html 
 {
     font-size: 62.5%;
     box-sizing: border-box;
+    background-color: var(--color-background-grey-light);
 }
 
 .toolbar {
+    padding: 2rem 5rem;
+
     display: flex;
+    justify-content: space-around;
+    width: 1440px;
+    height: 58px;
+    left: 0px;
+    top: 0px;
+
+    font-size: 1.8rem;
+
+    background-color: white;
+    box-shadow: 0px 7px 7px rgba(109, 109, 109, 0.04);
+
+    margin-bottom: 1rem
+}
+
+.rightSide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+    padding: 0px;
+    gap: 2rem;
+
+}
+
+.logo {
+    width: 4rem;
+    height: 4rem
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-search {
+    border: none;
+    background-color: var(--color-searchbox-background);
+    width: 1.8rem;
+    z-index: 100000;
+}
+
+.search-input {
+    border: none;
+    border-radius: 4rem;
+    height: 3.3rem;
+    background-color: var(--color-searchbox-background);
+    margin-left: -2.5rem;
+    padding: 0 3rem;
+}
+
+.leftSide {
+    
+    display:flex;
+    justify-content: space-between;
+    gap: 1.2rem;
+    align-items: center;
+
+}
+
+.nav-link{
+    border: none;
+    background-color: inherit;
+    align-items: center;
+}
+
+.toolbar-svg{
+    height: 1.8rem;
+    width: 1.8rem;
+}
+
+.nav-link-selected {
+    border-bottom: .2rem solid var(--color-button-selected-text-green);
+    color: var(--color-button-selected-text-green);
+}
+
+.profileImg {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100px
 }
